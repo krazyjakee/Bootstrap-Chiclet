@@ -1,0 +1,7 @@
+.well{
+  background: #1e1f24;
+  border-color: #27282d;
+  @include box-shadow(#18191e 0px 0px 1px inset);
+  @include border-radius(0px);
+  margin: 5px;
+}

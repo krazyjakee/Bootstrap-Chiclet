@@ -1,0 +1,20 @@
+.table{
+  th, td{
+    background-color: transparent !important;
+  }
+  > thead{
+    background-color: $gray !important;
+    > tr{
+      > th{
+        border-bottom: none;
+      }
+    }
+  }
+  > tbody{
+    > tr{
+      > td{
+        border-top: 1px solid $light-gray;
+      }
+    }
+  }
+}

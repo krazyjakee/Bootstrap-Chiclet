@@ -1,0 +1,47 @@
+.navbar-default{
+  background-color: $gray;
+  border-left: 1px solid $light-gray;
+  border-top: 1px solid $light-gray;
+  border-right: 1px solid $light-gray;
+  border-bottom: 1px solid black;
+  .navbar-nav{
+    > li{
+      padding-top: 8px;
+      padding-bottom: 8px;
+      margin: 0 4px;
+      > a{
+        padding-top: 6px;
+        padding-bottom: 6px;
+        color: lighten($text-color, 10%);
+        @extend %shiny-gray;
+        @include border-radius(5px);
+        &:hover{
+          color: $text-color-active;
+        }
+      }
+      &.active{
+        > a{
+          @extend %shiny-gray;
+          @include border-radius(5px);
+          color: $text-color-active;
+          &:hover{
+            color: $text-color-active;
+          }
+        }
+      }
+    }
+    > .open{
+      > a{
+        color: lighten($text-color, 10%);
+        &:hover{
+          color: lighten($text-color, 10%);
+        }
+        &:focus{
+          color: lighten($text-color, 10%);
+          border: 1px solid #333333;
+          border-bottom: 2px solid #1a1a1a;
+        }
+      }
+    }
+  }
+}

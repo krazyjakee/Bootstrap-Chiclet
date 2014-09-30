@@ -1,0 +1,138 @@
+@mixin btn-gradient($bgcolor, $color){
+  @include text-bevel(darken($bgcolor, 20%));
+  color: $color;
+  &:hover{
+    @include shiny-gradient(lighten($bgcolor, 5%));
+    @include box-shadow(none);
+    color: lighten($color, 20%);
+  }
+  &:active{
+    @include shiny-gradient(darken($bgcolor, 5%));
+    color: darken($color, 10%);
+    border-bottom: none;
+    margin-top: 2px;
+    &:before, &:after{
+      opacity: 0.2;
+    }
+  }
+  &:link, &:focus, &:active{
+    color: $color;
+  }
+  &:focus{
+    border: 1px solid darken($bgcolor, 10%);
+    border-bottom: 2px solid darken($bgcolor, 15%);
+  }
+  @extend %glint;
+}
+
+.btn{
+  @include user-select(none);
+  &:active:focus{
+    border-bottom: 0;
+    @extend %outline;
+  }
+  &:focus{
+    @extend %outline;
+  }
+  &.disabled{
+    @extend %grayscale;
+  }
+}
+
+.btn-default{
+  @include btn-gradient($light-gray, lighten($text-color, 20%));
+  @extend %shiny-gray;
+}
+
+.btn-primary{
+  @include btn-gradient($blue, lighten($text-color, 20%));
+  @extend %shiny-blue;
+}
+
+.btn-success{
+  @include btn-gradient($green, lighten($text-color, 20%));
+  @extend %shiny-green;
+}
+
+.btn-danger{
+  @include btn-gradient($red, lighten($text-color, 20%));
+  @extend %shiny-red;
+}
+
+.btn-info{
+  @include btn-gradient($light-blue, lighten($text-color, 20%));
+  @extend %shiny-lightBlue;
+}
+
+.btn-warning{
+  @include btn-gradient($orange, lighten($text-color, 20%));
+  @extend %shiny-orange;
+}
+
+.input-group-addon{
+  @include shiny-gradient($light-gray);
+  color: $text-color;
+}
+
+.btn-group{
+  @include box(#131313);
+  .btn{
+    line-height: 100%;
+    &:not(:first-child):not(:last-child){
+      &:before, &:after{
+        display: none;
+      }
+    }
+    &:first-child{
+      &:after{
+        display: none;
+      }
+    }
+    &:last-child{
+      &:before{
+        display: none;
+      }
+    }
+  }
+}
+
+.open{
+  > .dropdown-toggle{
+    &.btn-default{
+      @extend .btn-default;
+    }
+    &.btn-primary{
+      @extend .btn-primary;
+    }
+    &.btn-success{
+      @extend .btn-success;
+    }
+    &.btn-danger{
+      @extend .btn-danger;
+    }
+    &.btn-info{
+      @extend .btn-info;
+    }
+    &.btn-warning{
+      @extend .btn-warning;
+    }
+  }
+}
+
+.dropdown-menu{
+  @extend %gray-box;
+  @include box-shadow(black 0px 0px 6px);
+  background-color: lighten($gray, 2%);
+  > li {
+    > a{
+      color: #bbb;
+      &:hover{
+        background-color: lighten($gray, 1%);
+        color: #eee;
+      }
+    }
+  }
+  .divider{
+    background-color: $light-gray;
+  }
+}

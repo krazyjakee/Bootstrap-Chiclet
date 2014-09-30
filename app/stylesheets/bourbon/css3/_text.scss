@@ -1,0 +1,3 @@
+@mixin text-shadow($property: none) {
+  @include prefixer(text-shadow, $property, webkit moz ms o spec);
+}

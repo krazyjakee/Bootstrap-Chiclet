@@ -1,0 +1,24 @@
+@mixin shiny-gradient($color){
+  @include background-image(linear-gradient(top, lighten($color, 10%) 0%,darken($color, 10%) 100%));
+  background-color: $color;
+  border: 1px solid darken($color, 10%);
+  border-bottom: 2px solid darken($color, 15%);
+}
+
+@mixin text-bevel($color){
+  @include text-shadow($color 0px -1px 0px);
+}
+
+@mixin box($color){
+  @include box-shadow($color 0px 0px 8px inset);
+  @include border-radius(7px);
+  background: $color;
+  border: 1px solid darken($color, 15%);
+  padding: 5px;
+}
+
+@mixin inset-border($color, $shadow){
+  border: 1px solid $color;
+  border-bottom: 2px solid #666;
+  @include box-shadow(inset 0 0 4px 0 $shadow);
+}

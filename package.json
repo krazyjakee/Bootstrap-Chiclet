@@ -1,0 +1,26 @@
+{
+  "name": "bootstrap-chiclet",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.coffee",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "body-parser": "latest",
+    "coffee-middleware": "latest",
+    "coffee-script": "latest",
+    "express": "latest",
+    "jade": "latest",
+    "node-sass": "latest",
+    "nodemon": "latest",
+    "ico": "latest"
+  }
+}

@@ -1,0 +1,2 @@
+cd .
+nodemon server.coffee

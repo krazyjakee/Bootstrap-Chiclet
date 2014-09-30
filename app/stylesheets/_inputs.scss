@@ -1,0 +1,18 @@
+.form-control{
+  @extend %gray-box;
+  @extend .inset-border;
+  @include text-bevel(black);
+  padding-left: 15px;
+  padding-right: 15px;
+  color: $text-color;
+  &[type="text"],[type="search"],[type="number"],[type="email"]{
+    &:focus{
+      @include inset-border($light-blue, $light-blue);
+      border-bottom: 2px solid darken($light-blue, 10%);
+    }
+  }
+  &[disabled]{
+    background-color: $light-gray;
+    @include text-shadow(none);
+  }
+}

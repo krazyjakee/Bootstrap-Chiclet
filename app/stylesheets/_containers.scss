@@ -1,0 +1,57 @@
+.panel{
+  background-color: #1e1f24;
+  border-bottom: 7px solid #141519 !important;
+  border-top: 2px solid #52535d !important;
+}
+.panel-default, .panel-primary, .panel-danger, .panel-success, .panel-info, .panel-warning{
+  border-color: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 0 3px #131313;
+
+  .panel-heading{
+    color: #FFF;
+    border: none;
+    
+    @include background-image(linear-gradient(#383941, #1e1f24));
+
+    .panel-title{
+      text-transform: uppercase;
+      font-size: 12px;
+      @include text-bevel(#000);
+    }
+  }
+}
+
+.panel-footer{
+  border-top: 1px solid #2B2B2B;
+  background-color: #1e1f24;
+}
+.panel-primary{
+  .panel-heading{
+    @include background-image(linear-gradient(#394C5E, #1e1f24));
+  }
+}
+.panel-danger{
+  .panel-heading{
+    @include background-image(linear-gradient(#422E2E, #1e1f24));
+  }
+}
+.panel-success{
+  .panel-heading{
+    @include background-image(linear-gradient(#32422e, #1e1f24));
+  }
+}
+.panel-info{
+  .panel-heading{
+    @include background-image(linear-gradient(#2E3742, #1e1f24));
+  }
+}
+.panel-warning{
+  .panel-heading{
+    @include background-image(linear-gradient(#42412E, #1e1f24));
+  }
+}
+
+
+.jumbotron{
+  background-color: #1e1f24;
+}

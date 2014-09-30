@@ -1,0 +1,86 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
+
+%shiny-blue{
+  @include shiny-gradient($blue);
+  &:hover{
+    @include shiny-gradient(lighten($blue, 10%));
+  }
+}
+
+%shiny-red{
+  @include shiny-gradient($red);
+  &:hover{
+    @include shiny-gradient(lighten($red, 10%));
+  }
+}
+
+%shiny-green{
+  @include shiny-gradient($green);
+  &:hover{
+    @include shiny-gradient(lighten($green, 10%));
+  }
+}
+
+%shiny-gray{
+  @include shiny-gradient($light-gray);
+  &:hover{
+    @include shiny-gradient(lighten($light-gray, 10%));
+  }
+}
+
+%shiny-lightBlue{
+  @include shiny-gradient($light-blue);
+  &:hover{
+    @include shiny-gradient(lighten($light-blue, 10%));
+  }
+}
+
+%shiny-orange{
+  @include shiny-gradient($orange);
+  &:hover{
+    @include shiny-gradient(lighten($orange, 10%));
+  }
+}
+
+%glint{
+  position: relative;
+  &:before, &:after{
+    @include background-image(linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 20%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 80%,rgba(255,255,255,0) 100%));
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 100%;
+    top: 0;
+  }
+  &:before{
+    left: 0;
+  }
+  &:after{
+    right: 0;
+  }
+}
+
+%outline{
+  @include outline(none);
+}
+
+.glint-large{
+  &:before, &:after{
+    @include background-image(linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%));
+  }
+}
+
+%gray-box{
+  @include box($gray);
+}
+
+%grayscale{
+  filter: #{"grayscale(100%)"};
+  -webkit-filter: #{"grayscale(100%)"};
+  -moz-filter: #{"grayscale(100%)"};
+  -ms-filter: #{"grayscale(100%)"};
+}
+
+.inset-border{
+  @include inset-border($light-gray, black);
+}
